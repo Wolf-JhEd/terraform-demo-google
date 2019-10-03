@@ -1,0 +1,85 @@
+apply---Construye o cambia infraestructura
+
+console---Consola interactiva para interpolaciones de Terraform
+
+destroy---Destruir la infraestructura gestionada por Terraform
+
+env---Gestión del espacio de trabajo --- terraform env sera eliminado y se reemplazara --- terraform workspace
+
+get---Descargue e instale módulos para la configuración
+
+graph---Crear un gráfico visual de los recursos de Terraform.
+
+import---Importar infraestructura existente en Terraform
+
+init---Inicializar un directorio de trabajo de Terraform
+
+output---Leer una salida de un archivo de estado
+
+plan---Generar y mostrar un plan de ejecución.
+
+providers---Imprime un árbol de los proveedores utilizados en la configuración.
+
+refresh---Actualizar el archivo de estado local contra recursos reales
+
+show---Inspeccionar el estado o plan de Terraform
+
+taint---Marque manualmente un recurso para recreación
+
+>>Marque manualmente un recurso como contaminado, forzando una destrucción y recreación
+  en el siguiente plan / aplicar.
+
+  Esto no modificará su infraestructura. Este comando cambia tu
+  Estado para marcar un recurso como contaminado para que durante el próximo plan o
+  aplicar ese recurso será destruido y recreado. Este comando en
+  la suya no modificará la infraestructura. Este comando se puede deshacer
+  usando el comando "terraform untaint" con la misma dirección.
+
+  La dirección está en la sintaxis habitual de la dirección de recursos, como se muestra en
+  la salida de otros comandos, como:
+    aws_instance.foo
+    aws_instance.bar [1]
+    module.foo.module.bar.aws_instance.baz
+
+>>Options:
+
+  -allow-missing      Si se especifica, el comando tendrá éxito (código de salida 0)
+                      incluso si falta el recurso
+
+  -backup=path        Ruta para hacer una copia de seguridad del archivo de estado existente antes
+                      modificando El valor predeterminado es la ruta "-state-out" con
+                      Extensión ".backup". Establezca en "-" para desactivar la copia de seguridad.
+
+  -lock=true          Bloquee el archivo de estado cuando se admite el bloqueo.
+
+  -lock-timeout=0s    Duración para volver a intentar un bloqueo de estado.
+
+  -state=path         Ruta de acceso para leer y guardar el estado (a menos que se indique lo contrario)
+                      está especificado). El valor predeterminado es "terraform.tfstate".
+
+  -state-out=path    Ruta para escribir el archivo de estado actualizado. Por defecto, el
+                      Se utilizará la ruta "-state".
+
+untaint---Desmarcar manualmente un recurso como contaminado
+
+validate---Valida los archivos de Terraform
+
+version---Imprime la versión de Terraform
+
+workspace---Gestión del espacio de trabajo
+
+--- Todos los otros comandos: ---
+
+0.12upgrade--- Reescribe el código fuente del módulo anterior a 0.12 para v0.12
+
+debug--- Gestión de salida de depuración (experimental)
+
+force-unlock--- Desbloquee manualmente el estado de terraformación
+
+push--- Comando obsoleto para el legado de Terraform Enterprise (v1)
+
+state--- Administración de estado avanzada
+
+ --- terraform workspace ---
+
+  New, list, show, select and delete Terraform workspaces.
