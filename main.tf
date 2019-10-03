@@ -1,35 +1,9 @@
-resource "google_compute_instance" "terragcp" {
-  name         = "terragcp"
-  machine_type = "n1-standard-1"
-  zone         = "us-central1-a"
-
-  tags = ["foo", "bar"]
-
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-9"
-    }
-  }
-
-  // Local SSD disk
-  scratch_disk {
-  }
-
-  network_interface {
-    network = "default"
-
-    access_config {
-      // Ephemeral IP
-    }
-  }
-
-  metadata = {
-    foo = "bar"
-  }
-
-  metadata_startup_script = "echo hi > /test.txt"
-
-  service_account {
-    scopes = ["userinfo-email", "compute-ro", "storage-ro"]
-  }
+// Configure the Google Cloud provider
+provider "google" {
+ credentials = "${file("terra-app-254820-ec4b032a09b7.json")}"
+ project     = "terra-app-254820"
+ region      = "us-west1"
 }
+
+//Nombre de proyecto terra-app
+//credencial  terra-app-254820
